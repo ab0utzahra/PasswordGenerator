@@ -1,0 +1,36 @@
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+
+
+*{
+    margin: 0;
+    padding: 0;
+ 
+    
+}
+
+.password-box{
+    margin-top: -1rem;
+    
+}
+
+.right-hand{
+    margin-right: 3.2rem;
+    margin-bottom: 1px;
+    transition: all .3s ease-out;
+}
+
+.left-hand{
+    margin-left: 3.5rem;
+    transition: all .3s ease-out;
+}
+
+.hands-close{
+    top: 8.24rem;
+    transition: background-position .3s ease-out, transform .3s ease-out, opacity .1s linear .1s, -webkit-transform .3s ease-out;
+    transform-origin: 0 40px;
+    transform: translateX(1px) scale(1);
+}
+
+.close-eyes{
+    transition: all .1s ease-out 0s;
+}

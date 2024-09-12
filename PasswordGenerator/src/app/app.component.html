@@ -1,0 +1,62 @@
+<div class="lh-lg mt-5 d-flex flex-column align-items-center">
+    
+    <div class="animation">
+      @if(!generated){
+        <div class="images">
+          <img src="face.png" width="120px">     
+          <div class="hands position-absolute ms-5 ps-4 d-flex flex-row align-items-end">
+            <img src="left-hand.png" width="50px" class="left-hand position-absolute start-50">
+            <img src="right-hand.png" width="50px" class="right-hand position-absolute end-50">
+          </div>
+        </div>
+      }
+
+      @if(generated){
+        <div class="images">
+          <div class="eyes d-flex flex-column">
+            <img src="face.png" width="120px">
+            <img src="close-eyes.png" width="120px" class="position-absolute close-eyes">
+          </div>
+          <div class="hands-close position-absolute ps-4 d-flex flex-row align-items-end me-5">
+            <img src="left-close.png" width="50px" class="position-absolute start-0" >
+            <img src="right-close.png" width="50px" class="position-absolute start-50 ms-5" >
+          </div>
+        </div>
+      }
+    </div>
+    <div class="password-box border-1 border-top-0 p-4 d-flex flex-column border rounded-3 align-items-center gap-2">
+      <div class="password-length align-items-center d-flex flex-column">
+        <h1 class="mb-1">Password Generator</h1>
+        <div class="d-flex felx-row mt-2 mb-2">
+          <label for="input" class="me-2">Password Length :</label>
+          <input  class="rounded-1 border-1 mb-1 px-2" [(ngModel)]="length" [placeholder]=""/>
+        </div>
+      </div>
+    
+      <div class="float-start d-flex flex-row mb-1">
+        <div class="gap-1 d-flex me-3">
+          <input type="checkbox" name="letter" id="letter" (input)="onChangeLetter()">
+          <label>Use Letters</label>
+        </div>
+      
+        <div class="gap-1 d-flex me-3">
+          <input type="checkbox" name="number" id="number" (input)="onChangeNumber()">
+          <label>Use Numbers</label>
+          
+        </div>
+      
+        <div class="gap-1 d-flex">
+          <input type="checkbox" name="symbol" id="symbol" (input)="onChangeSymbol()">
+          <label>Use Symbols</label>
+          
+        </div>
+      </div>
+    
+      <button class="btn btn-success fw-semibold mb-3 mt-2 px-5" (click)="generatePassword()">GENERATE !</button>
+    
+      <div class="generated-password align-items-center d-flex flex-row mb-2">
+        <label for="input" class="me-2">Your Password :</label>
+        <input type="text" class="rounded-1 border-1 px-3" [(ngModel)]="password" >
+      </div>
+    </div>
+</div>
