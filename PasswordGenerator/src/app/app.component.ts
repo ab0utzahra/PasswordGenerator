@@ -68,5 +68,11 @@ export class AppComponent {
     
   }
 
+
+  clearInput(){
+    this.length = 0;
+  }
+  
+
   
 }

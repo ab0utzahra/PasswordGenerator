@@ -29,7 +29,7 @@
         <h1 class="mb-1">Password Generator</h1>
         <div class="d-flex felx-row mt-2 mb-2">
           <label for="input" class="me-2">Password Length :</label>
-          <input  class="rounded-1 border-1 mb-1 px-2" [(ngModel)]="length" [placeholder]=""/>
+          <input  class="rounded-1 border-1 mb-1 px-2" (click)="clearInput()" [(ngModel)]="length"/>
         </div>
       </div>
     
@@ -52,11 +52,13 @@
         </div>
       </div>
     
-      <button class="btn btn-success fw-semibold mb-3 mt-2 px-5" (click)="generatePassword()">GENERATE !</button>
+      <button class="btn btn-primary fw-semibold mb-3 mt-2 px-5" (click)="generatePassword()" [disabled]="!(length && (includeLetters || includeNumbers || includeSymbols))" >GENERATE !</button>
     
-      <div class="generated-password align-items-center d-flex flex-row mb-2">
-        <label for="input" class="me-2">Your Password :</label>
-        <input type="text" class="rounded-1 border-1 px-3" [(ngModel)]="password" >
-      </div>
+      @if(password && this.length > 0){
+        <div class="generated-password align-items-center d-flex flex-row mb-2">
+          <label for="input" class="me-2">Your Password :</label>
+          <input type="text" class="rounded-1 border-1 px-3" [(ngModel)]="password" >
+        </div>
+      }
     </div>
 </div>
